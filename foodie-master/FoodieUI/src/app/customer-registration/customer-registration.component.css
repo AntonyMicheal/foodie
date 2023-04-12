@@ -1,0 +1,6 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 0.7  rem;
+    line-height: 1.5em;
+    padding-left: 50em;
+    padding-right: 50em;
+    }

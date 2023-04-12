@@ -1,0 +1,48 @@
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-success" (click)="getRestaurants()">getAllRestaurants</button>
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-danger" (click)="getDishes()">getAllDishses</button>
+    </div>
+    <div class="col-sm-3">
+     Search Restaurants: <input type="text" class="form-control" [(ngModel)]="search"/>
+    </div>
+    <div class="col-sm-3">
+      Search Dishes: <input type="text" class="form-control" [(ngModel)]="input"/>
+     </div>
+  </div>
+</div>
+<br>
+
+<div *ngIf="restaurants.length >0">
+  <h1>List Of Restaurants</h1>
+<div *ngFor="let r of restaurants| search:search" class="card" style="width: 18rem;">
+  <img src={{r.imageUrl}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{r.name}}</h5>
+    <p class="card-text">ContacNumber: {{r.contactNo}}</p>
+    Rating: <rating  style="color: #0275d8;font-size: 25px;" [(ngModel)]="r.rating" [max]="max" [readonly]="isReadonly" >
+    </rating>
+  </div>
+ 
+</div>
+<br>
+<div *ngIf="dishses.length > 0">
+<h1>Avaialble Dishes</h1>
+
+<div *ngFor="let d of dishses| restaurantFilter:input" class="card" style="width: 18rem;">
+  <img src={{d.imageUrl}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{d.restaurantName}}</h5>
+    <p class="card-text">Rs.{{d.price}}</p>
+    <b>{{d.dishName}}</b>   
+    <br>                                 
+  <button type="submit" class="btn btn-success" (click)="order(d)">OrderNow</button>
+</div>
+</div>{{message}} 
+</div>
+

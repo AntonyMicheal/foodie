@@ -1,0 +1,19 @@
+h1{
+    color:green;
+}
+
+.card{
+
+    display: inline-block;
+    
+}
+
+.card-title{
+    font-weight: bolder;
+    font-size: larger;
+}
+
+b{
+    font-weight: bolder;
+    font-size: larger;
+}

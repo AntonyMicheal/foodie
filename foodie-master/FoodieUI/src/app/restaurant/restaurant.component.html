@@ -1,0 +1,57 @@
+
+<body >
+<br>
+<button type="submit" class="btn btn-warning" (click)="getRestaurant()">Get Restaurants</button>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Category</th>
+        <th scope="col">contactNumber</th>
+        <th scope="col">Username</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of restaurants">
+        <td> {{r.id}}</td>
+        <td>{{r.name}}</td>
+        <td>{{r.location}}</td>
+        <td>{{r.category}}</td>
+        <td>{{r.contactNo}}</td>
+        <td>{{r.username}}</td>
+        <td>{{r.rating}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Avaialble Dishes</h2>
+  <button type="submit" class="btn btn-info" (click)="getDishes()">Get Dishes</button>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">dishName</th>
+        <th scope="col">type</th>
+        <th scope="col">description</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of dishses">
+        <td> {{r.id}}</td>
+        <td>{{r.dishName}}</td>
+        <td>{{r.type}}</td>
+        <td>{{r.description}}</td>
+        <button type="submit" class="btn btn-danger" (click)="deletedish(r.id)">Delete</button>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
